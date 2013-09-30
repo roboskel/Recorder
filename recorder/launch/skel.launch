@@ -1,0 +1,3 @@
+<launch>
+	<node name="skel_tracker" pkg="recorder" type="tf_test" required = "true" output="screen"/>
+</launch>
