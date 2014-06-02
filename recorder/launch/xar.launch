@@ -1,0 +1,17 @@
+<launch>
+    <node name="joy_node" pkg="joy" type="joy_node" />
+    
+    <node pkg="hokuyo_node" type="hokuyo_node" name="hokuyo_node"> 
+        <param name = "intensity" type="bool" value="false"/>
+        <param name = "skip" value = "0" />
+    </node>
+    
+    <node pkg="kinect_aux" type="kinect_aux_node" name="camera_tilt" respawn="true"/>
+    
+    <node name="test_motors" pkg="sek_drive" type="test_motors" output="screen"/>
+    
+    <node name="record_hok" pkg="recorder" type="record_hok" required="true" output="screen"/>
+    
+    <include file="$(find openni_launch)/launch/openni.launch"/>
+    
+</launch>
